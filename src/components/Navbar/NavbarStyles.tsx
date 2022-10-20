@@ -39,12 +39,13 @@ export const MobileIcon = styled.button`
 
 export const NavLogo = styled(Link)`
   z-index: 99;
-  position: absolute;
+  /*   position: absolute;
   top: 0;
-  left: 0;
+  left: 0; */
   display: flex;
   justify-self: flex-start;
   align-items: center;
+  margin-right: auto;
   cursor: pointer;
   color: #fff;
   text-decoration: none;
@@ -81,6 +82,10 @@ export const NavMenu = styled.ul<{ open: boolean }>`
 
 export const NavMenuItem = styled.li`
   cursor: pointer;
+
+  &:hover {
+    transform: translateY(2%);
+  }
   @media screen and (max-width: 968px) {
     padding: 2rem;
   }
