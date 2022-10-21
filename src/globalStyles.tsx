@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { css, createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -32,4 +32,32 @@ export const Header = styled.h2<{ lightText?: boolean }>`
   line-height: 1.1;
   font-weight: 600;
   color: ${({ lightText }) => (lightText ? "#f7f8fa" : "1c2237")};
+`;
+
+const titleDecoration = css`
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -20px;
+    height: 2px;
+    width: 40px;
+    background-color: #ef4b6c;
+    transform: translateX(-50%);
+  }
+`;
+
+export const TitleWithDecoration = styled.h2<{
+  large?: boolean;
+  decoration?: boolean;
+}>`
+  position: relative;
+  text-align: center;
+  font-size: ${({ large }) =>
+    large ? "clamp(1.3rem, 13vw, 3.1rem)" : "1.3rem"};
+  font-weight: ${({ large }) => (large ? "700" : "500")};
+  line-height: 1.06;
+  letter-spacing: 1.88px;
+
+  ${({ decoration }) => decoration && titleDecoration}
 `;

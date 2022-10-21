@@ -5,30 +5,13 @@ export const FeaturesSection = styled.section`
   padding: 140px;
 `;
 
-export const FeatureTitle = styled.h2`
-  position: relative;
-  text-align: center;
-  font-size: clamp(1.3rem, 13vw, 3.1rem);
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    height: 2px;
-    width: 40px;
-    background-color: #ef4b6c;
-    transform: translateX(-50%);
-  }
-`;
-
 export const FeaturesWrapper = styled.div`
   display: grid;
   gap: 4rem;
   grid-template-columns: repeat(3, 1fr);
   max-width: 100%;
   margin: 0 auto;
-  padding-top: 1rem;
+  padding-top: 2rem;
 
   &.text {
     background-color: red;

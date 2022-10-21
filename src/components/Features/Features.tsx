@@ -1,8 +1,8 @@
 import React from "react";
 import { featuresData } from "../../data/featuresData";
+import { Container, TitleWithDecoration } from "../../globalStyles";
 import {
   FeaturesSection,
-  FeatureTitle,
   FeaturesWrapper,
   FeatureColumn,
   FeatureImageWrapper,
@@ -12,18 +12,22 @@ import {
 
 const Features = () => (
   <FeaturesSection>
-    <FeatureTitle>What We Do</FeatureTitle>
-    <FeaturesWrapper>
-      {featuresData.map((feature) => (
-        <FeatureColumn key={feature.name}>
-          <FeatureImageWrapper className={feature.imgClass}>
-            {feature.icon}
-          </FeatureImageWrapper>
-          <FeatureName>{feature.name}</FeatureName>
-          <FeatureText>{feature.description}</FeatureText>
-        </FeatureColumn>
-      ))}
-    </FeaturesWrapper>
+    <Container>
+      <TitleWithDecoration large decoration>
+        What We Do
+      </TitleWithDecoration>
+      <FeaturesWrapper>
+        {featuresData.map((feature) => (
+          <FeatureColumn key={feature.name}>
+            <FeatureImageWrapper className={feature.imgClass}>
+              {feature.icon}
+            </FeatureImageWrapper>
+            <FeatureName>{feature.name}</FeatureName>
+            <FeatureText>{feature.description}</FeatureText>
+          </FeatureColumn>
+        ))}
+      </FeaturesWrapper>
+    </Container>
   </FeaturesSection>
 );
 
